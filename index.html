@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤 발표자 뽑기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="stage" aria-live="polite">
+      <p class="stage__label">오늘의 발표자</p>
+      <p class="stage__name" id="presenter">차례가 정해지면 이곳에 이름이 나타나요</p>
+    </section>
+
+    <section class="panel">
+      <form class="add-form" id="add-form" autocomplete="off">
+        <label class="add-form__label" for="student-name">학생 이름</label>
+        <div class="add-form__row">
+          <input
+            type="text"
+            id="student-name"
+            class="add-form__input"
+            placeholder="이름을 입력하세요"
+            maxlength="30"
+            autocomplete="off"
+          >
+          <button type="submit" class="btn btn--primary btn--add">추가</button>
+        </div>
+      </form>
+
+      <div class="roster">
+        <div class="roster__header">
+          <h2 class="roster__title">학생 목록</h2>
+          <span class="roster__count" id="count">0명</span>
+        </div>
+        <ul class="roster__list" id="roster-list" role="list"></ul>
+        <p class="roster__empty" id="empty">아직 등록된 학생이 없어요.</p>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="pick-btn" class="btn btn--accent">발표자 뽑기</button>
+        <button type="button" id="reset-btn" class="btn btn--ghost">전체 초기화</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
